@@ -2,7 +2,7 @@
 
 PhoneBook::PhoneBook() : contact_count(0) {
     for (int i = 0; i < 8; ++i) {
-        my_contacts[i] = Contacts(); // Her bir elemanı varsayılan yapıcı ile başlat
+        my_contacts[i] = Contacts();
     }
 }
 
@@ -22,5 +22,5 @@ Contacts PhoneBook::getContact(int index) {
     if (index >= 0 && index < contact_count) {
         return my_contacts[index];
     }
-    return Contacts(); // Return a default contact if index is out of bounds
+    return Contacts(); 
 }
