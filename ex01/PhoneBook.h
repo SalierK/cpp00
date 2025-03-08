@@ -2,7 +2,10 @@
 #define PHONEBOOK_H
 
 #include "Contacts.h"
-#include <iomanip> 
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cctype>
 
 class PhoneBook {
 public:
