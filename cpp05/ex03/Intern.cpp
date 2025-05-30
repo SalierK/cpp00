@@ -20,23 +20,23 @@ Intern &Intern::operator=(const Intern &src)
 }
 
 
-AForm Intern::makeForm(std::string form_name, std::string target_f)
+AForm* Intern::makeForm(std::string form_name, std::string target_f)
 {
 
     if(form_name == "RobotomyRequestForm")
     {
-        RobotomyRequestForm a(target_f);
-        return a;
+        
+        return new RobotomyRequestForm(target_f);
     }
     else if(form_name == "PresidentialPardonForm")
     {
-        PresidentialPardonForm a(target_f);
-        return a;
+        
+        return new PresidentialPardonForm(target_f);
     }
     else if(form_name == "ShrubberyCreationForm")
     {
-        PresidentialPardonForm a(target_f);
-        return a;
+        
+        return new ShrubberyCreationForm(target_f);
     }
 
 }

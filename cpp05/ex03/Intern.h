@@ -15,8 +15,7 @@ class Intern
         ~Intern();
         Intern(const Intern &src);
         Intern &operator=(const Intern &src);
-        AForm makeForm(std::string form_name, std::string target_f);
-        class 
+        AForm* makeForm(std::string form_name, std::string target_f);
 };
 
 
