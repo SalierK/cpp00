@@ -25,7 +25,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 
 const std::string RobotomyRequestForm::get_name() const
 {
-    return get_name();
+    return AForm::get_name();
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat bureaucrat) const

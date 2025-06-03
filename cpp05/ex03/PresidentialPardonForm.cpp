@@ -25,7 +25,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 const std::string PresidentialPardonForm::get_name() const
 {
-    return get_name();
+    return AForm::get_name();
 }
 
 void PresidentialPardonForm::execute(const Bureaucrat bureaucrat) const

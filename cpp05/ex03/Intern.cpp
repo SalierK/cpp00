@@ -1,5 +1,11 @@
 #include "Intern.h"
 
+std::string const _formNames[3] = {
+    "shrubbery creation",
+    "robotomy request",
+    "presidential pardon"
+};
+
 Intern::Intern()
 {
 
@@ -17,26 +23,41 @@ Intern::Intern(const Intern &src)
 Intern &Intern::operator=(const Intern &src)
 {
     *this = src;
+    return *this;
 }
 
 
 AForm* Intern::makeForm(std::string form_name, std::string target_f)
 {
-
-    if(form_name == "RobotomyRequestForm")
+    for (size_t i = 0; i < 3; i++)
     {
-        
-        return new RobotomyRequestForm(target_f);
+        if (form_name == _formNames[i])
+        {
+            switch (i)
+            {
+                case 0:
+                {
+                    std::cout << "Intern creates " << form_name << std::endl;
+                    return new ShrubberyCreationForm(target_f);
+                }
+                case 1:
+                {
+                    std::cout << "Intern creates " << form_name << std::endl;
+                    return new RobotomyRequestForm(target_f);
+                }
+                case 2:
+                {
+                    std::cout << "Intern creates " << form_name << std::endl;
+                    return new PresidentialPardonForm(target_f);
+                }
+                default:
+                    throw ExplicitError();
+            }
+        }
     }
-    else if(form_name == "PresidentialPardonForm")
-    {
-        
-        return new PresidentialPardonForm(target_f);
-    }
-    else if(form_name == "ShrubberyCreationForm")
-    {
-        
-        return new ShrubberyCreationForm(target_f);
-    }
-
+    throw ExplicitError();
+}
+const char* Intern::ExplicitError::what() const throw()
+{
+    return "Explicit Error";
 }

@@ -16,6 +16,12 @@ class Intern
         Intern(const Intern &src);
         Intern &operator=(const Intern &src);
         AForm* makeForm(std::string form_name, std::string target_f);
+        class ExplicitError : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        
 };
 
 

@@ -23,14 +23,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
-const std::string get_name()
-{
-    return "TEST";
-}
-
 const std::string ShrubberyCreationForm::get_name() const
 {
-    return get_name();
+    return AForm::get_name();
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat bureaucrat) const
